@@ -1,0 +1,199 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --primary: #059669;
+  --primary-hover: #047857;
+  --primary-light: #ecfdf5;
+  --primary-dark: #064e3b;
+  --dark-card: #0f3d32;
+  --bg-main: #f8fafc;
+  --sidebar-width: 250px;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Green Buttons & Highlights */
+.btn-billet {
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-billet:hover {
+  background-color: var(--primary-hover);
+  color: #ffffff;
+}
+
+.btn-billet-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-billet-outline:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-hover);
+}
+
+.card-billet {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.card-billet-dark {
+  background: linear-gradient(135deg, #0f3d32 0%, #064e3b 100%);
+  color: #ffffff;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Sidebar */
+.billet-sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.billet-sidebar .brand {
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.billet-sidebar .nav-item-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  margin: 0.15rem 0.75rem;
+  border-radius: 8px;
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.925rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.billet-sidebar .nav-item-link:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.billet-sidebar .nav-item-link.active {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Layout Content */
+.billet-main-content {
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.billet-topbar {
+  height: 64px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.billet-body {
+  padding: 2rem;
+  flex: 1;
+}
+
+/* Badge & Status */
+.badge-active {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.badge-inactive {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.badge-warning-custom {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.badge-danger-custom {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Money colors */
+.money-income {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.money-expense {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* Password strength meter */
+.password-meter-bar {
+  height: 4px;
+  border-radius: 2px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .billet-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  .billet-sidebar.open {
+    transform: translateX(0);
+  }
+  .billet-main-content {
+    margin-left: 0;
+  }
+}

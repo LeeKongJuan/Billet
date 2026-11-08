@@ -1,0 +1,8 @@
+node_modules/
+# Local environment variables (never commit)
+.env
+dist/
+client/dist/
+*.log
+.DS_Store
+Thumbs.db
