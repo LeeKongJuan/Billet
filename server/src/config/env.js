@@ -24,6 +24,7 @@ const envSchema = z.object({
   MYSQLPASSWORD: z.string().default(''),
   MYSQLDATABASE: z.string().default('billet'),
   DATABASE_URL: z.string().optional(),
+  MYSQL_URL: z.string().optional(),
 
   // Optional DB client override for testing or SQLite fallback
   DB_CLIENT: z.enum(['mysql2', 'better-sqlite3']).default('mysql2')

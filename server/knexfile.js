@@ -25,8 +25,8 @@ const config = isSqlite
     }
   : {
       client: 'mysql2',
-      connection: env.DATABASE_URL
-        ? env.DATABASE_URL
+      connection: (env.DATABASE_URL || env.MYSQL_URL)
+        ? (env.DATABASE_URL || env.MYSQL_URL)
         : {
             host: env.MYSQLHOST,
             port: env.MYSQLPORT,
